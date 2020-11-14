@@ -1,7 +1,7 @@
 {
   "name": "rpc-json-signer",
   "description": "JSON-RPC signer using jsonschema config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Pedro Gomes <github.com/pedrouid>",
   "license": "MIT",
   "keywords": [
