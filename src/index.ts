@@ -1,6 +1,6 @@
-import _JsonRpcSigner from './signer';
+import Signer from './signer';
 
 export * from './types';
 
-export const JsonRpcSigner = _JsonRpcSigner;
-export default _JsonRpcSigner;
+export const JsonRpcSigner = Signer;
+export default Signer;

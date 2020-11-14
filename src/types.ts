@@ -1,8 +1,9 @@
+import * as jsonschema from 'jsonschema';
+
 import { JsonRpcRequest } from 'rpc-json-utils';
 
-export type JsonSchema = any;
-
-export interface JsonRpcMethodSchema {
+export type JsonSchema = jsonschema.Schema;
+export interface JsonRpcMethodConfig {
   name: string;
   description: string;
   params: JsonSchema;
@@ -10,7 +11,7 @@ export interface JsonRpcMethodSchema {
   userApproval?: boolean;
 }
 export interface JsonRpcSignerConfig {
-  [method: string]: JsonRpcMethodSchema;
+  [method: string]: JsonRpcMethodConfig;
 }
 
 export abstract class IJsonRpcSigner {
@@ -19,4 +20,6 @@ export abstract class IJsonRpcSigner {
   public abstract supportsMethod(request: JsonRpcRequest): boolean;
 
   public abstract requiresApproval(request: JsonRpcRequest): boolean;
+
+  public abstract validateRequest(request: JsonRpcRequest): boolean;
 }
