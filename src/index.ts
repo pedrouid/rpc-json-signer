@@ -1,4 +1,4 @@
-import Signer from './signer';
+import { JsonRpcSigner as Signer } from './signer';
 
 export * from './types';
 
